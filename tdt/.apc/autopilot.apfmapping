@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<autopilotfilemapping:AutoPilotFileMapping xmlns:autopilotfilemapping="www.autoesl.com/autopilotfilemapping">
+  <source>
+    <originFiles name="aux.c" path="/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/aux.c"/>
+    <originFiles name="aux.h" path="/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/aux.h"/>
+    <originFiles name="tdt.c" path="/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/tdt.c"/>
+    <originFiles name="tdt.h" path="/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/tdt.h"/>
+  </source>
+  <testbench>
+    <originFiles name="tdt_tb.c" path="/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/tdt_tb.c"/>
+  </testbench>
+</autopilotfilemapping:AutoPilotFileMapping>

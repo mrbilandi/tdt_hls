@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<xd:acceleratorMap xmlns:xd="http://www.xilinx.com/xidane" xd:functionName="tdt" xd:componentRef="tdt" xd:initiationInterval="1" xd:clockPeriod="4.500" xd:sequential="true" xd:hostMachine="64" xd:reset="control">
+  <xd:controlReg xd:name="control" xd:interfaceRef="ap_ctrl" xd:busTypeRef="acc_handshake" xd:type="acc_handshake"/>
+  <xd:arg xd:name="w_div" xd:originalName="w_div" xd:direction="in" xd:interfaceRef="w_div" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="h_div" xd:originalName="h_div" xd:direction="in" xd:interfaceRef="h_div" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="d_w" xd:originalName="d_w" xd:direction="in" xd:interfaceRef="d_w" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="13"/>
+  <xd:arg xd:name="d_h" xd:originalName="d_h" xd:direction="in" xd:interfaceRef="d_h" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="13"/>
+  <xd:arg xd:name="s_w" xd:originalName="s_w" xd:direction="in" xd:interfaceRef="s_w" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="13"/>
+  <xd:arg xd:name="s_h" xd:originalName="s_h" xd:direction="in" xd:interfaceRef="s_h" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="13"/>
+  <xd:arg xd:name="M0" xd:originalName="M0" xd:direction="in" xd:interfaceRef="M0" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="M1" xd:originalName="M1" xd:direction="in" xd:interfaceRef="M1" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="M2" xd:originalName="M2" xd:direction="in" xd:interfaceRef="M2" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="M3" xd:originalName="M3" xd:direction="in" xd:interfaceRef="M3" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="M4" xd:originalName="M4" xd:direction="in" xd:interfaceRef="M4" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="M5" xd:originalName="M5" xd:direction="in" xd:interfaceRef="M5" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="27"/>
+  <xd:arg xd:name="c" xd:originalName="c" xd:direction="in" xd:interfaceRef="c" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="r" xd:originalName="r" xd:direction="in" xd:interfaceRef="r" xd:busTypeRef="register" xd:handshakeRef="ap_none" xd:dataWidth="8"/>
+  <xd:arg xd:name="*(hs_p)" xd:originalName="hs_p" xd:direction="out" xd:interfaceRef="hs_p" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="15" xd:firstOut="11"/>
+  <xd:arg xd:name="*(hs)" xd:originalName="hs" xd:direction="out" xd:interfaceRef="hs" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="15" xd:firstOut="11"/>
+  <xd:arg xd:name="*(ws)" xd:originalName="ws" xd:direction="out" xd:interfaceRef="ws" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="15" xd:firstOut="11"/>
+  <xd:arg xd:name="*(tile_valid)" xd:originalName="tile_valid" xd:direction="out" xd:interfaceRef="tile_valid" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="1" xd:firstOut="11"/>
+  <xd:arg xd:name="*(left_col)" xd:originalName="left_col" xd:direction="out" xd:interfaceRef="left_col" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="12" xd:firstOut="11"/>
+  <xd:arg xd:name="*(top_row)" xd:originalName="top_row" xd:direction="out" xd:interfaceRef="top_row" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="12" xd:firstOut="11"/>
+  <xd:arg xd:name="*(baddr)" xd:originalName="baddr" xd:direction="out" xd:interfaceRef="baddr" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="32" xd:firstOut="11"/>
+  <xd:arg xd:name="*(cd0)" xd:originalName="cd0" xd:direction="out" xd:interfaceRef="cd0" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="13" xd:firstOut="11"/>
+  <xd:arg xd:name="*(cd1)" xd:originalName="cd1" xd:direction="out" xd:interfaceRef="cd1" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="13" xd:firstOut="11"/>
+  <xd:arg xd:name="*(cd2)" xd:originalName="cd2" xd:direction="out" xd:interfaceRef="cd2" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="13" xd:firstOut="11"/>
+  <xd:arg xd:name="*(cd3)" xd:originalName="cd3" xd:direction="out" xd:interfaceRef="cd3" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="13" xd:firstOut="11"/>
+  <xd:arg xd:name="*(mod_db)" xd:originalName="mod_db" xd:direction="out" xd:interfaceRef="mod_db" xd:busTypeRef="register" xd:handshakeRef="ap_vld" xd:dataWidth="2" xd:firstOut="11"/>
+  <xd:latencyEstimates xd:best-case="11" xd:worst-case="11" xd:average-case="11"/>
+  <xd:resourceEstimates xd:LUT="3414" xd:FF="3863" xd:BRAM="0" xd:DSP="25"/>
+</xd:acceleratorMap>

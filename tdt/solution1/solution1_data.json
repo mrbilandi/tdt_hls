@@ -1,0 +1,704 @@
+{
+  "Top": "tdt",
+  "RtlTop": "tdt",
+  "RtlPrefix": "",
+  "SourceLanguage": "c",
+  "ResetStyle": "control",
+  "GenerateBdFiles": "0",
+  "HostMachineBits": "64",
+  "Target": {
+    "Family": "kintex7",
+    "Device": "xc7k325t",
+    "Package": "ffg676",
+    "Speed": "-2"
+  },
+  "HlsSolution": {"Config": ["config_interface -clock_enable=1 -expose_global=0 -m_axi_addr64=0 -m_axi_offset=off -register_io=off -trim_dangling_port=0"]},
+  "ClockInfo": {
+    "ClockName": "ap_clk",
+    "ClockPeriod": "4.5",
+    "IsCombLogic": "0",
+    "II": "1",
+    "Latency": "11",
+    "Uncertainty": "0"
+  },
+  "Xdc": {"OocClocks": ["create_clock -name ap_clk -period 4.500 [get_ports ap_clk]"]},
+  "Ipx": {
+    "Vendor": "samim",
+    "Library": "hls",
+    "Name": "tdt",
+    "Version": "1.9",
+    "DisplayName": "tdt",
+    "Revision": "84",
+    "Description": "tile dime transformer",
+    "Taxonomy": "\/video"
+  },
+  "Files": {
+    "CSource": [
+      "..\/..\/src\/tdt.c",
+      "..\/..\/src\/aux.c"
+    ],
+    "Vhdl": [
+      "impl\/vhdl\/tdt_mac_muladd_13cud.vhd",
+      "impl\/vhdl\/tdt_mul_27s_13s_3bkb.vhd",
+      "impl\/vhdl\/tdt.vhd"
+    ],
+    "Verilog": [
+      "impl\/verilog\/tdt_mac_muladd_13cud.v",
+      "impl\/verilog\/tdt_mul_27s_13s_3bkb.v",
+      "impl\/verilog\/tdt.v"
+    ],
+    "Misc": ["impl\/misc\/logo.png"]
+  },
+  "SubcoreInfo": {
+    "HasXpmMemory": false,
+    "HasClockedDsp": false,
+    "IP": []
+  },
+  "Interfaces": {
+    "M0": {
+      "type": "data",
+      "dir": "in",
+      "width": "27",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "27"
+        }}
+    },
+    "M1": {
+      "type": "data",
+      "dir": "in",
+      "width": "27",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "27"
+        }}
+    },
+    "M2": {
+      "type": "data",
+      "dir": "in",
+      "width": "27",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "27"
+        }}
+    },
+    "M3": {
+      "type": "data",
+      "dir": "in",
+      "width": "27",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "27"
+        }}
+    },
+    "M4": {
+      "type": "data",
+      "dir": "in",
+      "width": "27",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "27"
+        }}
+    },
+    "M5": {
+      "type": "data",
+      "dir": "in",
+      "width": "27",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "27"
+        }}
+    },
+    "ap_ce": {
+      "type": "clockenable",
+      "ctype": {"CE": {"Type": "bool"}}
+    },
+    "ap_clk": {
+      "type": "clock",
+      "ctype": {"CLK": {"Type": "bool"}},
+      "reset": "ap_rst"
+    },
+    "ap_ctrl": {
+      "type": "ap_ctrl",
+      "ctrl_ports": "ap_start ap_done ap_idle ap_ready",
+      "ctype": {
+        "start": {"Type": "bool"},
+        "done": {"Type": "bool"},
+        "idle": {"Type": "bool"},
+        "ready": {"Type": "bool"}
+      }
+    },
+    "ap_rst": {
+      "type": "reset",
+      "polarity": "ACTIVE_HIGH",
+      "ctype": {"RST": {"Type": "bool"}}
+    },
+    "baddr": {
+      "type": "data",
+      "dir": "out",
+      "width": "32",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "32"
+        }}
+    },
+    "c": {
+      "type": "data",
+      "dir": "in",
+      "width": "8",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "8"
+        }}
+    },
+    "cd0": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "cd1": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "cd2": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "cd3": {
+      "type": "data",
+      "dir": "out",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "d_h": {
+      "type": "data",
+      "dir": "in",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "d_w": {
+      "type": "data",
+      "dir": "in",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "h_div": {
+      "type": "data",
+      "dir": "in",
+      "width": "8",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "8"
+        }}
+    },
+    "hs": {
+      "type": "data",
+      "dir": "out",
+      "width": "15",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "15"
+        }}
+    },
+    "hs_p": {
+      "type": "data",
+      "dir": "out",
+      "width": "15",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "15"
+        }}
+    },
+    "left_col": {
+      "type": "data",
+      "dir": "out",
+      "width": "12",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "12"
+        }}
+    },
+    "mod_db": {
+      "type": "data",
+      "dir": "out",
+      "width": "2",
+      "ctype": {"DATA": {
+          "Type": "integer unsigned",
+          "Width": "2"
+        }}
+    },
+    "r": {
+      "type": "data",
+      "dir": "in",
+      "width": "8",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "8"
+        }}
+    },
+    "s_h": {
+      "type": "data",
+      "dir": "in",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "s_w": {
+      "type": "data",
+      "dir": "in",
+      "width": "13",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "13"
+        }}
+    },
+    "tile_valid": {
+      "type": "data",
+      "dir": "out",
+      "width": "1",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "1"
+        }}
+    },
+    "top_row": {
+      "type": "data",
+      "dir": "out",
+      "width": "12",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "12"
+        }}
+    },
+    "w_div": {
+      "type": "data",
+      "dir": "in",
+      "width": "8",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "8"
+        }}
+    },
+    "ws": {
+      "type": "data",
+      "dir": "out",
+      "width": "15",
+      "ctype": {"DATA": {
+          "Type": "integer signed",
+          "Width": "15"
+        }}
+    }
+  },
+  "RtlPorts": {
+    "ap_clk": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_rst": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_start": {
+      "dir": "in",
+      "width": "1"
+    },
+    "ap_done": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_idle": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ready": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ap_ce": {
+      "dir": "in",
+      "width": "1"
+    },
+    "w_div": {
+      "dir": "in",
+      "width": "8"
+    },
+    "h_div": {
+      "dir": "in",
+      "width": "8"
+    },
+    "d_w": {
+      "dir": "in",
+      "width": "13"
+    },
+    "d_h": {
+      "dir": "in",
+      "width": "13"
+    },
+    "s_w": {
+      "dir": "in",
+      "width": "13"
+    },
+    "s_h": {
+      "dir": "in",
+      "width": "13"
+    },
+    "M0": {
+      "dir": "in",
+      "width": "27"
+    },
+    "M1": {
+      "dir": "in",
+      "width": "27"
+    },
+    "M2": {
+      "dir": "in",
+      "width": "27"
+    },
+    "M3": {
+      "dir": "in",
+      "width": "27"
+    },
+    "M4": {
+      "dir": "in",
+      "width": "27"
+    },
+    "M5": {
+      "dir": "in",
+      "width": "27"
+    },
+    "c": {
+      "dir": "in",
+      "width": "8"
+    },
+    "r": {
+      "dir": "in",
+      "width": "8"
+    },
+    "hs_p": {
+      "dir": "out",
+      "width": "15"
+    },
+    "hs_p_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "hs": {
+      "dir": "out",
+      "width": "15"
+    },
+    "hs_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "ws": {
+      "dir": "out",
+      "width": "15"
+    },
+    "ws_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "tile_valid": {
+      "dir": "out",
+      "width": "1",
+      "isVector": "true"
+    },
+    "tile_valid_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "left_col": {
+      "dir": "out",
+      "width": "12"
+    },
+    "left_col_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "top_row": {
+      "dir": "out",
+      "width": "12"
+    },
+    "top_row_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "baddr": {
+      "dir": "out",
+      "width": "32"
+    },
+    "baddr_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cd0": {
+      "dir": "out",
+      "width": "13"
+    },
+    "cd0_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cd1": {
+      "dir": "out",
+      "width": "13"
+    },
+    "cd1_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cd2": {
+      "dir": "out",
+      "width": "13"
+    },
+    "cd2_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "cd3": {
+      "dir": "out",
+      "width": "13"
+    },
+    "cd3_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    },
+    "mod_db": {
+      "dir": "out",
+      "width": "2"
+    },
+    "mod_db_ap_vld": {
+      "dir": "out",
+      "width": "1"
+    }
+  },
+  "CPorts": {
+    "ap_ctrl": {
+      "interfaceRef": "ap_ctrl",
+      "dir": "out"
+    },
+    "w_div": {
+      "interfaceRef": "w_div",
+      "dir": "in",
+      "dataWidth": "8",
+      "handshakeRef": "ap_none"
+    },
+    "h_div": {
+      "interfaceRef": "h_div",
+      "dir": "in",
+      "dataWidth": "8",
+      "handshakeRef": "ap_none"
+    },
+    "d_w": {
+      "interfaceRef": "d_w",
+      "dir": "in",
+      "dataWidth": "13",
+      "handshakeRef": "ap_none"
+    },
+    "d_h": {
+      "interfaceRef": "d_h",
+      "dir": "in",
+      "dataWidth": "13",
+      "handshakeRef": "ap_none"
+    },
+    "s_w": {
+      "interfaceRef": "s_w",
+      "dir": "in",
+      "dataWidth": "13",
+      "handshakeRef": "ap_none"
+    },
+    "s_h": {
+      "interfaceRef": "s_h",
+      "dir": "in",
+      "dataWidth": "13",
+      "handshakeRef": "ap_none"
+    },
+    "M0": {
+      "interfaceRef": "M0",
+      "dir": "in",
+      "dataWidth": "27",
+      "handshakeRef": "ap_none"
+    },
+    "M1": {
+      "interfaceRef": "M1",
+      "dir": "in",
+      "dataWidth": "27",
+      "handshakeRef": "ap_none"
+    },
+    "M2": {
+      "interfaceRef": "M2",
+      "dir": "in",
+      "dataWidth": "27",
+      "handshakeRef": "ap_none"
+    },
+    "M3": {
+      "interfaceRef": "M3",
+      "dir": "in",
+      "dataWidth": "27",
+      "handshakeRef": "ap_none"
+    },
+    "M4": {
+      "interfaceRef": "M4",
+      "dir": "in",
+      "dataWidth": "27",
+      "handshakeRef": "ap_none"
+    },
+    "M5": {
+      "interfaceRef": "M5",
+      "dir": "in",
+      "dataWidth": "27",
+      "handshakeRef": "ap_none"
+    },
+    "c": {
+      "interfaceRef": "c",
+      "dir": "in",
+      "dataWidth": "8",
+      "handshakeRef": "ap_none"
+    },
+    "r": {
+      "interfaceRef": "r",
+      "dir": "in",
+      "dataWidth": "8",
+      "handshakeRef": "ap_none"
+    },
+    "hs_p": {
+      "interfaceRef": "hs_p",
+      "dir": "out",
+      "dataWidth": "15",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "hs": {
+      "interfaceRef": "hs",
+      "dir": "out",
+      "dataWidth": "15",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "ws": {
+      "interfaceRef": "ws",
+      "dir": "out",
+      "dataWidth": "15",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "tile_valid": {
+      "interfaceRef": "tile_valid",
+      "dir": "out",
+      "dataWidth": "1",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "left_col": {
+      "interfaceRef": "left_col",
+      "dir": "out",
+      "dataWidth": "12",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "top_row": {
+      "interfaceRef": "top_row",
+      "dir": "out",
+      "dataWidth": "12",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "baddr": {
+      "interfaceRef": "baddr",
+      "dir": "out",
+      "dataWidth": "32",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "cd0": {
+      "interfaceRef": "cd0",
+      "dir": "out",
+      "dataWidth": "13",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "cd1": {
+      "interfaceRef": "cd1",
+      "dir": "out",
+      "dataWidth": "13",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "cd2": {
+      "interfaceRef": "cd2",
+      "dir": "out",
+      "dataWidth": "13",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "cd3": {
+      "interfaceRef": "cd3",
+      "dir": "out",
+      "dataWidth": "13",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    },
+    "mod_db": {
+      "interfaceRef": "mod_db",
+      "dir": "out",
+      "dataWidth": "2",
+      "handshakeRef": "ap_vld",
+      "firstOutLatency": "11"
+    }
+  },
+  "ModuleInfo": {
+    "Hierarchy": {"ModuleName": "tdt"},
+    "Metrics": {"tdt": {
+        "Latency": {
+          "LatencyBest": "11",
+          "LatencyAvg": "11",
+          "LatencyWorst": "11",
+          "PipelineII": "1",
+          "PipelineDepth": "12",
+          "PipelineType": "function"
+        },
+        "Timing": {
+          "Target": "4.50",
+          "Uncertainty": "0.00",
+          "Estimate": "4.48"
+        },
+        "Area": {
+          "BRAM_18K": "0",
+          "DSP48E": "25",
+          "FF": "3863",
+          "LUT": "3414"
+        }
+      }}
+  },
+  "GenData": {
+    "DataVersion": "0.1",
+    "Time": "2020-03-14 21:14:41 +0330",
+    "ToolName": "vivado_hls",
+    "ToolVersion": "2018.1"
+  }
+}

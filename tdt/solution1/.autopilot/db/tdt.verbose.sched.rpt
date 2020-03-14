@@ -1,0 +1,507 @@
+
+
+================================================================
+== Vivado HLS Report for 'tdt'
+================================================================
+* Date:           Sat Mar 14 21:14:26 2020
+
+* Version:        2018.1 (Build 2188600 on Wed Apr 04 19:04:02 MDT 2018)
+* Project:        tdt
+* Solution:       solution1
+* Product family: kintex7
+* Target device:  xc7k325tffg676-2
+
+
+================================================================
+== Performance Estimates
+================================================================
++ Timing (ns): 
+    * Summary: 
+    +--------+-------+----------+------------+
+    |  Clock | Target| Estimated| Uncertainty|
+    +--------+-------+----------+------------+
+    |ap_clk  |   4.50|      4.48|        0.00|
+    +--------+-------+----------+------------+
+
++ Latency (clock cycles): 
+    * Summary: 
+    +-----+-----+-----+-----+----------+
+    |  Latency  |  Interval | Pipeline |
+    | min | max | min | max |   Type   |
+    +-----+-----+-----+-----+----------+
+    |   11|   11|    1|    1| function |
+    +-----+-----+-----+-----+----------+
+
+    + Detail: 
+        * Instance: 
+        N/A
+
+        * Loop: 
+        N/A
+
+============================================================
++ Verbose Summary: Synthesis Manager
+============================================================
+InlineROM: 1
+ExposeGlobal: 0
+============================================================
++ Verbose Summary: CDFG Model
+============================================================
+IsTopModel: 1
+ResetActiveHigh: 1
+IsCombinational: 0
+IsDatapathOnly: 0
+HasWiredReturn: 1
+HasMFsm: 2
+HasVarLatency: 0
+IsPipeline: 1
+IsRtlPipelined: 1
+IsInstanceOverlapped: 0
+IsDontTouch: 0
+HasImplIP: 0
+IsGatedGlobalClock: 0
+
++ Individual pipeline summary: 
+  * Pipeline-0: initiation interval (II) = 1, depth = 12
+
+
+============================================================
++ Verbose Summary: Schedule
+============================================================
+* Number of FSM states : 12
+* Pipeline : 1
+  Pipeline-0 : II = 1, D = 12, States = { 1 2 3 4 5 6 7 8 9 10 11 12 }
+* Dataflow Pipeline: 0
+
+* FSM state transitions: 
+1 --> 
+	2  / true
+2 --> 
+	3  / true
+3 --> 
+	4  / true
+4 --> 
+	5  / true
+5 --> 
+	6  / true
+6 --> 
+	7  / true
+7 --> 
+	8  / true
+8 --> 
+	9  / true
+9 --> 
+	10  / true
+10 --> 
+	11  / true
+11 --> 
+	12  / true
+12 --> 
+
+* FSM state operations: 
+
+ <State 1> : 2.70ns
+ST_1 : Operation 13 [1/1] (0.00ns)   --->   "%r_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %r) nounwind"
+ST_1 : Operation 14 [1/1] (0.00ns)   --->   "%c_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %c) nounwind"
+ST_1 : Operation 15 [1/1] (0.00ns)   --->   "%M5_read = call i27 @_ssdm_op_Read.ap_auto.i27(i27 %M5) nounwind"
+ST_1 : Operation 16 [1/1] (0.00ns)   --->   "%M4_read = call i27 @_ssdm_op_Read.ap_auto.i27(i27 %M4) nounwind"
+ST_1 : Operation 17 [1/1] (0.00ns)   --->   "%M3_read = call i27 @_ssdm_op_Read.ap_auto.i27(i27 %M3) nounwind"
+ST_1 : Operation 18 [1/1] (0.00ns)   --->   "%M2_read = call i27 @_ssdm_op_Read.ap_auto.i27(i27 %M2) nounwind"
+ST_1 : Operation 19 [1/1] (0.00ns)   --->   "%M1_read = call i27 @_ssdm_op_Read.ap_auto.i27(i27 %M1) nounwind"
+ST_1 : Operation 20 [1/1] (0.00ns)   --->   "%M0_read = call i27 @_ssdm_op_Read.ap_auto.i27(i27 %M0) nounwind"
+ST_1 : Operation 21 [1/1] (0.00ns)   --->   "%s_h_read = call i13 @_ssdm_op_Read.ap_auto.i13(i13 %s_h) nounwind"
+ST_1 : Operation 22 [1/1] (0.00ns)   --->   "%s_w_read = call i13 @_ssdm_op_Read.ap_auto.i13(i13 %s_w) nounwind"
+ST_1 : Operation 23 [1/1] (0.00ns)   --->   "%d_h_read = call i13 @_ssdm_op_Read.ap_auto.i13(i13 %d_h) nounwind"
+ST_1 : Operation 24 [1/1] (0.00ns)   --->   "%d_w_read = call i13 @_ssdm_op_Read.ap_auto.i13(i13 %d_w) nounwind"
+ST_1 : Operation 25 [1/1] (0.00ns)   --->   "%h_div_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %h_div) nounwind"
+ST_1 : Operation 26 [1/1] (0.00ns)   --->   "%w_div_read = call i8 @_ssdm_op_Read.ap_auto.i8(i8 %w_div) nounwind"
+ST_1 : Operation 27 [1/1] (0.00ns)   --->   "%tmp = sext i8 %w_div_read to i13" [src/tdt.c:76]
+ST_1 : Operation 28 [1/1] (0.00ns)   --->   "%tmp_1 = sext i8 %c_read to i13" [src/tdt.c:76]
+ST_1 : Operation 29 [1/1] (2.70ns)   --->   "%cd00 = mul i13 %tmp, %tmp_1" [src/tdt.c:76]   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 30 [1/1] (0.00ns)   --->   "%tmp_5 = sext i8 %h_div_read to i13" [src/tdt.c:78]
+ST_1 : Operation 31 [1/1] (0.00ns)   --->   "%tmp_6 = sext i8 %r_read to i13" [src/tdt.c:78]
+ST_1 : Operation 32 [1/1] (2.70ns)   --->   "%rd00 = mul i13 %tmp_5, %tmp_6" [src/tdt.c:78]   --->   Core 16 'Mul' <Latency = 0> <II = 1> <Delay = 2.70> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_1 : Operation 33 [1/1] (0.00ns)   --->   "%tmp_7 = call i12 @_ssdm_op_PartSelect.i12.i13.i32.i32(i13 %d_w_read, i32 1, i32 12)" [src/tdt.c:90]
+ST_1 : Operation 34 [1/1] (0.00ns)   --->   "%tmp_3 = call i12 @_ssdm_op_PartSelect.i12.i13.i32.i32(i13 %d_h_read, i32 1, i32 12)" [src/tdt.c:91]
+ST_1 : Operation 35 [1/1] (0.00ns)   --->   "%tmp_13 = call i12 @_ssdm_op_PartSelect.i12.i13.i32.i32(i13 %s_w_read, i32 1, i32 12)" [src/tdt.c:101]
+ST_1 : Operation 36 [1/1] (0.00ns)   --->   "%tmp_14 = call i12 @_ssdm_op_PartSelect.i12.i13.i32.i32(i13 %s_h_read, i32 1, i32 12)" [src/tdt.c:102]
+ST_1 : Operation 37 [1/1] (0.00ns)   --->   "%cl = trunc i13 %s_w_read to i12" [src/tdt.c:113]
+ST_1 : Operation 38 [1/1] (0.00ns)   --->   "%rt = trunc i13 %s_h_read to i12" [src/tdt.c:129]
+
+ <State 2> : 4.06ns
+ST_2 : Operation 39 [1/1] (0.00ns)   --->   "%tmp_cast = sext i8 %w_div_read to i9" [src/tdt.c:76]
+ST_2 : Operation 40 [1/1] (1.35ns)   --->   "%tmp1 = add i9 -1, %tmp_cast" [src/tdt.c:77]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 41 [1/1] (0.00ns)   --->   "%tmp21_cast = sext i9 %tmp1 to i13" [src/tdt.c:77]
+ST_2 : Operation 42 [1/1] (1.35ns)   --->   "%cd11 = add i13 %tmp21_cast, %cd00" [src/tdt.c:77]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 43 [1/1] (0.00ns)   --->   "%tmp_5_cast = sext i8 %h_div_read to i9" [src/tdt.c:78]
+ST_2 : Operation 44 [1/1] (1.35ns)   --->   "%tmp2 = add i9 -1, %tmp_5_cast" [src/tdt.c:79]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 45 [1/1] (0.00ns)   --->   "%tmp22_cast = sext i9 %tmp2 to i13" [src/tdt.c:79]
+ST_2 : Operation 46 [1/1] (0.00ns) (grouped into TernaryAdder)   --->   "%rd11 = add i13 %tmp22_cast, %rd00" [src/tdt.c:79]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.00> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+ST_2 : Operation 47 [1/1] (0.00ns)   --->   "%tmp_4 = sext i12 %tmp_7 to i13" [src/tdt.c:90]
+ST_2 : Operation 48 [1/1] (0.00ns)   --->   "%tmp_s = sext i12 %tmp_3 to i13" [src/tdt.c:91]
+ST_2 : Operation 49 [1/1] (1.35ns)   --->   "%tmp_15 = sub i13 %cd00, %tmp_4" [src/tdt.c:90]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 50 [1/1] (1.35ns)   --->   "%tmp_16 = sub i13 %rd00, %tmp_s" [src/tdt.c:91]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 51 [1/1] (1.35ns)   --->   "%tmp_26_1 = sub i13 %cd11, %tmp_4" [src/tdt.c:90]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_2 : Operation 52 [1/1] (2.00ns) (root node of TernaryAdder)   --->   "%tmp_27_2 = sub i13 %rd11, %tmp_s" [src/tdt.c:91]   --->   Core 80 'TAddSub' <Latency = 0> <II = 1> <Delay = 1.00> <IPBlock> <Opcode : 'add' 'sub'> <InPorts = 3> <OutPorts = 1> <Sync> <CReg>
+
+ <State 3> : 4.15ns
+ST_3 : Operation 53 [1/1] (0.00ns)   --->   "%tmp_8 = sext i27 %M0_read to i32" [src/tdt.c:94]
+ST_3 : Operation 54 [1/1] (0.00ns)   --->   "%tmp_2 = sext i27 %M1_read to i32" [src/tdt.c:94]
+ST_3 : Operation 55 [1/1] (0.00ns)   --->   "%tmp_10 = sext i27 %M3_read to i32" [src/tdt.c:95]
+ST_3 : Operation 56 [1/1] (0.00ns)   --->   "%tmp_11 = sext i27 %M4_read to i32" [src/tdt.c:95]
+ST_3 : Operation 57 [1/1] (0.00ns)   --->   "%tmp_17 = sext i13 %tmp_15 to i32" [src/tdt.c:94]
+ST_3 : Operation 58 [5/5] (4.14ns)   --->   "%tmp_18 = mul nsw i32 %tmp_8, %tmp_17" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 59 [1/1] (0.00ns)   --->   "%tmp_19 = sext i13 %tmp_16 to i32" [src/tdt.c:94]
+ST_3 : Operation 60 [5/5] (4.14ns)   --->   "%tmp_20 = mul nsw i32 %tmp_2, %tmp_19" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 61 [5/5] (4.14ns)   --->   "%tmp_23 = mul nsw i32 %tmp_10, %tmp_17" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 62 [5/5] (4.14ns)   --->   "%tmp_24 = mul nsw i32 %tmp_11, %tmp_19" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 63 [1/1] (0.00ns)   --->   "%tmp_28_1 = sext i13 %tmp_26_1 to i32" [src/tdt.c:94]
+ST_3 : Operation 64 [5/5] (4.14ns)   --->   "%tmp_29_1 = mul nsw i32 %tmp_8, %tmp_28_1" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 65 [5/5] (4.14ns)   --->   "%tmp_35_1 = mul nsw i32 %tmp_10, %tmp_28_1" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 66 [1/1] (0.00ns)   --->   "%tmp_30_2 = sext i13 %tmp_27_2 to i32" [src/tdt.c:94]
+ST_3 : Operation 67 [5/5] (4.14ns)   --->   "%tmp_31_2 = mul nsw i32 %tmp_2, %tmp_30_2" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_3 : Operation 68 [5/5] (4.14ns)   --->   "%tmp_36_2 = mul nsw i32 %tmp_11, %tmp_30_2" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 4> : 4.15ns
+ST_4 : Operation 69 [4/5] (4.14ns)   --->   "%tmp_18 = mul nsw i32 %tmp_8, %tmp_17" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 70 [4/5] (4.14ns)   --->   "%tmp_20 = mul nsw i32 %tmp_2, %tmp_19" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 71 [4/5] (4.14ns)   --->   "%tmp_23 = mul nsw i32 %tmp_10, %tmp_17" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 72 [4/5] (4.14ns)   --->   "%tmp_24 = mul nsw i32 %tmp_11, %tmp_19" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 73 [4/5] (4.14ns)   --->   "%tmp_29_1 = mul nsw i32 %tmp_8, %tmp_28_1" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 74 [4/5] (4.14ns)   --->   "%tmp_35_1 = mul nsw i32 %tmp_10, %tmp_28_1" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 75 [4/5] (4.14ns)   --->   "%tmp_31_2 = mul nsw i32 %tmp_2, %tmp_30_2" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_4 : Operation 76 [4/5] (4.14ns)   --->   "%tmp_36_2 = mul nsw i32 %tmp_11, %tmp_30_2" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 5> : 4.15ns
+ST_5 : Operation 77 [3/5] (4.14ns)   --->   "%tmp_18 = mul nsw i32 %tmp_8, %tmp_17" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 78 [3/5] (4.14ns)   --->   "%tmp_20 = mul nsw i32 %tmp_2, %tmp_19" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 79 [3/5] (4.14ns)   --->   "%tmp_23 = mul nsw i32 %tmp_10, %tmp_17" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 80 [3/5] (4.14ns)   --->   "%tmp_24 = mul nsw i32 %tmp_11, %tmp_19" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 81 [3/5] (4.14ns)   --->   "%tmp_29_1 = mul nsw i32 %tmp_8, %tmp_28_1" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 82 [3/5] (4.14ns)   --->   "%tmp_35_1 = mul nsw i32 %tmp_10, %tmp_28_1" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 83 [3/5] (4.14ns)   --->   "%tmp_31_2 = mul nsw i32 %tmp_2, %tmp_30_2" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_5 : Operation 84 [3/5] (4.14ns)   --->   "%tmp_36_2 = mul nsw i32 %tmp_11, %tmp_30_2" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 6> : 4.15ns
+ST_6 : Operation 85 [2/5] (4.14ns)   --->   "%tmp_18 = mul nsw i32 %tmp_8, %tmp_17" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 86 [2/5] (4.14ns)   --->   "%tmp_20 = mul nsw i32 %tmp_2, %tmp_19" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 87 [2/5] (4.14ns)   --->   "%tmp_23 = mul nsw i32 %tmp_10, %tmp_17" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 88 [2/5] (4.14ns)   --->   "%tmp_24 = mul nsw i32 %tmp_11, %tmp_19" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 89 [2/5] (4.14ns)   --->   "%tmp_29_1 = mul nsw i32 %tmp_8, %tmp_28_1" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 90 [2/5] (4.14ns)   --->   "%tmp_35_1 = mul nsw i32 %tmp_10, %tmp_28_1" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 91 [2/5] (4.14ns)   --->   "%tmp_31_2 = mul nsw i32 %tmp_2, %tmp_30_2" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_6 : Operation 92 [2/5] (4.14ns)   --->   "%tmp_36_2 = mul nsw i32 %tmp_11, %tmp_30_2" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 7> : 4.15ns
+ST_7 : Operation 93 [1/5] (4.14ns)   --->   "%tmp_18 = mul nsw i32 %tmp_8, %tmp_17" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 94 [1/5] (4.14ns)   --->   "%tmp_20 = mul nsw i32 %tmp_2, %tmp_19" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 95 [1/5] (4.14ns)   --->   "%tmp_23 = mul nsw i32 %tmp_10, %tmp_17" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 96 [1/5] (4.14ns)   --->   "%tmp_24 = mul nsw i32 %tmp_11, %tmp_19" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 97 [1/5] (4.14ns)   --->   "%tmp_29_1 = mul nsw i32 %tmp_8, %tmp_28_1" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 98 [1/5] (4.14ns)   --->   "%tmp_35_1 = mul nsw i32 %tmp_10, %tmp_28_1" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 99 [1/5] (4.14ns)   --->   "%tmp_31_2 = mul nsw i32 %tmp_2, %tmp_30_2" [src/tdt.c:94]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+ST_7 : Operation 100 [1/5] (4.14ns)   --->   "%tmp_36_2 = mul nsw i32 %tmp_11, %tmp_30_2" [src/tdt.c:95]   --->   Core 17 'MulnS' <Latency = 4> <II = 1> <Delay = 4.14> <FuncUnit> <Opcode : 'mul'> <InPorts = 2> <OutPorts = 1>
+
+ <State 8> : 4.38ns
+ST_8 : Operation 101 [1/1] (0.00ns)   --->   "%tmp_9 = sext i27 %M2_read to i32" [src/tdt.c:94]
+ST_8 : Operation 102 [1/1] (0.00ns)   --->   "%tmp_12 = sext i27 %M5_read to i32" [src/tdt.c:95]
+ST_8 : Operation 103 [1/1] (0.00ns)   --->   "%tmp_17_cast = sext i12 %tmp_13 to i18" [src/tdt.c:102]
+ST_8 : Operation 104 [1/1] (0.00ns)   --->   "%tmp_20_cast = sext i12 %tmp_14 to i18" [src/tdt.c:90]
+ST_8 : Operation 105 [1/1] (1.51ns)   --->   "%tmp_21 = add i32 %tmp_18, %tmp_9" [src/tdt.c:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 106 [1/1] (1.51ns)   --->   "%tmp_22 = add i32 %tmp_21, %tmp_20" [src/tdt.c:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 107 [1/1] (1.51ns)   --->   "%tmp_25 = add i32 %tmp_23, %tmp_12" [src/tdt.c:95]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 108 [1/1] (1.51ns)   --->   "%tmp_26 = add i32 %tmp_25, %tmp_24" [src/tdt.c:95]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 109 [1/1] (0.00ns)   --->   "%tmp_27 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_22, i32 15, i32 31)" [src/tdt.c:98]
+ST_8 : Operation 110 [1/1] (0.00ns)   --->   "%tmp_40_cast = sext i17 %tmp_27 to i18" [src/tdt.c:99]
+ST_8 : Operation 111 [1/1] (0.00ns)   --->   "%tmp_28 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_26, i32 15, i32 31)" [src/tdt.c:99]
+ST_8 : Operation 112 [1/1] (0.00ns)   --->   "%tmp_43_cast = sext i17 %tmp_28 to i18" [src/tdt.c:101]
+ST_8 : Operation 113 [1/1] (1.35ns)   --->   "%cs_0 = add i18 %tmp_40_cast, %tmp_17_cast" [src/tdt.c:101]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 114 [1/1] (1.35ns)   --->   "%rs_0 = add i18 %tmp_43_cast, %tmp_20_cast" [src/tdt.c:102]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 115 [1/1] (1.51ns)   --->   "%tmp_32_1 = add i32 %tmp_29_1, %tmp_9" [src/tdt.c:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 116 [1/1] (1.51ns)   --->   "%tmp_33_1 = add i32 %tmp_32_1, %tmp_20" [src/tdt.c:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 117 [1/1] (1.51ns)   --->   "%tmp_37_1 = add i32 %tmp_35_1, %tmp_12" [src/tdt.c:95]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 118 [1/1] (1.51ns)   --->   "%tmp_38_1 = add i32 %tmp_37_1, %tmp_24" [src/tdt.c:95]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 119 [1/1] (0.00ns)   --->   "%tmp_29 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_33_1, i32 15, i32 31)" [src/tdt.c:98]
+ST_8 : Operation 120 [1/1] (0.00ns)   --->   "%tmp_46_cast = sext i17 %tmp_29 to i18" [src/tdt.c:99]
+ST_8 : Operation 121 [1/1] (0.00ns)   --->   "%tmp_30 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_38_1, i32 15, i32 31)" [src/tdt.c:99]
+ST_8 : Operation 122 [1/1] (0.00ns)   --->   "%tmp_53_cast = sext i17 %tmp_30 to i18" [src/tdt.c:101]
+ST_8 : Operation 123 [1/1] (1.35ns)   --->   "%cs_1 = add i18 %tmp_46_cast, %tmp_17_cast" [src/tdt.c:101]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 124 [1/1] (1.35ns)   --->   "%rs_1 = add i18 %tmp_53_cast, %tmp_20_cast" [src/tdt.c:102]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 125 [1/1] (1.51ns)   --->   "%tmp_33_2 = add i32 %tmp_21, %tmp_31_2" [src/tdt.c:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 126 [1/1] (1.51ns)   --->   "%tmp_38_2 = add i32 %tmp_25, %tmp_36_2" [src/tdt.c:95]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 127 [1/1] (0.00ns)   --->   "%tmp_31 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_33_2, i32 15, i32 31)" [src/tdt.c:98]
+ST_8 : Operation 128 [1/1] (0.00ns)   --->   "%tmp_58_cast = sext i17 %tmp_31 to i18" [src/tdt.c:99]
+ST_8 : Operation 129 [1/1] (0.00ns)   --->   "%tmp_32 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_38_2, i32 15, i32 31)" [src/tdt.c:99]
+ST_8 : Operation 130 [1/1] (0.00ns)   --->   "%tmp_65_cast = sext i17 %tmp_32 to i18" [src/tdt.c:101]
+ST_8 : Operation 131 [1/1] (1.35ns)   --->   "%cs_2 = add i18 %tmp_58_cast, %tmp_17_cast" [src/tdt.c:101]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 132 [1/1] (1.35ns)   --->   "%rs_2 = add i18 %tmp_65_cast, %tmp_20_cast" [src/tdt.c:102]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 133 [1/1] (1.51ns)   --->   "%tmp_33_3 = add i32 %tmp_32_1, %tmp_31_2" [src/tdt.c:94]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 134 [1/1] (1.51ns)   --->   "%tmp_38_3 = add i32 %tmp_37_1, %tmp_36_2" [src/tdt.c:95]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 135 [1/1] (0.00ns)   --->   "%tmp_33 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_33_3, i32 15, i32 31)" [src/tdt.c:98]
+ST_8 : Operation 136 [1/1] (0.00ns)   --->   "%tmp_76_cast = sext i17 %tmp_33 to i18" [src/tdt.c:99]
+ST_8 : Operation 137 [1/1] (0.00ns)   --->   "%tmp_34 = call i17 @_ssdm_op_PartSelect.i17.i32.i32.i32(i32 %tmp_38_3, i32 15, i32 31)" [src/tdt.c:99]
+ST_8 : Operation 138 [1/1] (0.00ns)   --->   "%tmp_86_cast = sext i17 %tmp_34 to i18" [src/tdt.c:101]
+ST_8 : Operation 139 [1/1] (1.35ns)   --->   "%cs_3 = add i18 %tmp_76_cast, %tmp_17_cast" [src/tdt.c:101]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_8 : Operation 140 [1/1] (1.35ns)   --->   "%rs_3 = add i18 %tmp_86_cast, %tmp_20_cast" [src/tdt.c:102]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+
+ <State 9> : 3.13ns
+ST_9 : Operation 141 [1/1] (1.28ns)   --->   "%tmp_i = icmp sgt i18 %cs_0, %cs_1" [src/aux.c:15->src/tdt.c:110]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 142 [1/1] (0.56ns)   --->   "%min1 = select i1 %tmp_i, i18 %cs_1, i18 %cs_0" [src/aux.c:15->src/tdt.c:110]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 143 [1/1] (1.28ns)   --->   "%tmp_i_6 = icmp sgt i18 %cs_2, %cs_3" [src/aux.c:16->src/tdt.c:110]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 144 [1/1] (0.56ns)   --->   "%min2 = select i1 %tmp_i_6, i18 %cs_3, i18 %cs_2" [src/aux.c:16->src/tdt.c:110]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 145 [1/1] (1.28ns)   --->   "%tmp_97_i = icmp sgt i18 %min1, %min2" [src/aux.c:17->src/tdt.c:110]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 146 [1/1] (0.56ns)   --->   "%max1 = select i1 %tmp_i, i18 %cs_0, i18 %cs_1" [src/aux.c:23->src/tdt.c:118]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 147 [1/1] (0.56ns)   --->   "%max2 = select i1 %tmp_i_6, i18 %cs_2, i18 %cs_3" [src/aux.c:24->src/tdt.c:118]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 148 [1/1] (1.28ns)   --->   "%tmp_i1 = icmp sgt i18 %rs_0, %rs_1" [src/aux.c:15->src/tdt.c:126]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 149 [1/1] (0.56ns)   --->   "%min1_1 = select i1 %tmp_i1, i18 %rs_1, i18 %rs_0" [src/aux.c:15->src/tdt.c:126]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 150 [1/1] (1.28ns)   --->   "%tmp_i1_7 = icmp sgt i18 %rs_2, %rs_3" [src/aux.c:16->src/tdt.c:126]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 151 [1/1] (0.56ns)   --->   "%min2_2 = select i1 %tmp_i1_7, i18 %rs_3, i18 %rs_2" [src/aux.c:16->src/tdt.c:126]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 152 [1/1] (1.28ns)   --->   "%tmp_97_i1 = icmp sgt i18 %min1_1, %min2_2" [src/aux.c:17->src/tdt.c:126]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_9 : Operation 153 [1/1] (0.56ns)   --->   "%max1_2 = select i1 %tmp_i1, i18 %rs_0, i18 %rs_1" [src/aux.c:23->src/tdt.c:135]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_9 : Operation 154 [1/1] (0.56ns)   --->   "%max2_1 = select i1 %tmp_i1_7, i18 %rs_2, i18 %rs_3" [src/aux.c:24->src/tdt.c:135]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+
+ <State 10> : 4.48ns
+ST_10 : Operation 155 [1/1] (0.00ns)   --->   "%tmp_16_cast1 = sext i13 %s_w_read to i25" [src/tdt.c:101]
+ST_10 : Operation 156 [1/1] (0.00ns)   --->   "%tmp_16_cast2 = sext i13 %s_w_read to i14" [src/tdt.c:101]
+ST_10 : Operation 157 [1/1] (0.00ns)   --->   "%tmp_16_cast3 = sext i13 %s_w_read to i18" [src/tdt.c:101]
+ST_10 : Operation 158 [1/1] (0.00ns)   --->   "%tmp_16_cast = sext i13 %s_w_read to i27" [src/tdt.c:101]
+ST_10 : Operation 159 [1/1] (0.00ns)   --->   "%tmp_19_cast1 = sext i13 %s_h_read to i14" [src/tdt.c:102]
+ST_10 : Operation 160 [1/1] (0.00ns)   --->   "%tmp_19_cast2 = sext i13 %s_h_read to i18" [src/tdt.c:102]
+ST_10 : Operation 161 [1/1] (0.00ns)   --->   "%tmp_19_cast = sext i13 %s_h_read to i27" [src/tdt.c:102]
+ST_10 : Operation 162 [1/1] (0.56ns)   --->   "%min2_1 = select i1 %tmp_97_i, i18 %min2, i18 %min1" [src/aux.c:17->src/tdt.c:110]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 163 [1/1] (0.00ns)   --->   "%min2_1_cast = sext i18 %min2_1 to i26" [src/aux.c:17->src/tdt.c:110]
+ST_10 : Operation 164 [1/1] (0.00ns)   --->   "%tmp_35 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %min2_1, i32 17)" [src/tdt.c:110]
+ST_10 : Operation 165 [1/1] (0.00ns)   --->   "%tmp_24_cast = zext i26 %min2_1_cast to i27" [src/tdt.c:112]
+ST_10 : Operation 166 [1/1] (1.28ns)   --->   "%tmp_36 = icmp sgt i27 %tmp_24_cast, %tmp_16_cast" [src/tdt.c:112]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 167 [1/1] (0.00ns) (grouped into LUT with out node cl_1)   --->   "%cl_2 = trunc i18 %min2_1 to i12" [src/tdt.c:115]
+ST_10 : Operation 168 [1/1] (0.00ns) (grouped into LUT with out node cl_1)   --->   "%sel_tmp = xor i1 %tmp_35, true" [src/tdt.c:110]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 169 [1/1] (0.00ns) (grouped into LUT with out node cl_1)   --->   "%sel_tmp1 = and i1 %tmp_36, %sel_tmp" [src/tdt.c:112]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 170 [1/1] (0.00ns) (grouped into LUT with out node cl_1)   --->   "%cl_3 = select i1 %sel_tmp1, i12 %cl, i12 %cl_2" [src/tdt.c:112]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 171 [1/1] (0.62ns) (out node of the LUT)   --->   "%cl_1 = select i1 %tmp_35, i12 0, i12 %cl_3" [src/tdt.c:110]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 172 [1/1] (1.28ns)   --->   "%tmp_98_i = icmp sgt i18 %max1, %max2" [src/aux.c:25->src/tdt.c:118]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 173 [1/1] (0.56ns)   --->   "%max1_1 = select i1 %tmp_98_i, i18 %max1, i18 %max2" [src/aux.c:25->src/tdt.c:118]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 174 [1/1] (1.28ns)   --->   "%tmp_37 = icmp sgt i18 %max1_1, %tmp_16_cast3" [src/tdt.c:118]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 175 [1/1] (0.00ns) (grouped into LUT with out node tmp_43)   --->   "%tmp_42 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %max1_1, i32 17)" [src/tdt.c:120]
+ST_10 : Operation 176 [1/1] (0.00ns) (grouped into LUT with out node tmp_43)   --->   "%cr_2 = trunc i18 %max1_1 to i12" [src/tdt.c:123]
+ST_10 : Operation 177 [1/1] (0.00ns) (grouped into LUT with out node tmp_43)   --->   "%p_cr_2 = select i1 %tmp_42, i12 0, i12 %cr_2" [src/tdt.c:120]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 178 [1/1] (0.00ns) (grouped into LUT with out node tmp_43)   --->   "%cr_1 = select i1 %tmp_37, i12 %cl, i12 %p_cr_2" [src/tdt.c:118]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 179 [1/1] (0.56ns)   --->   "%min2_3 = select i1 %tmp_97_i1, i18 %min2_2, i18 %min1_1" [src/aux.c:17->src/tdt.c:126]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 180 [1/1] (0.00ns)   --->   "%min2_3_cast = sext i18 %min2_3 to i26" [src/aux.c:17->src/tdt.c:126]
+ST_10 : Operation 181 [1/1] (0.00ns)   --->   "%tmp_61 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %min2_3, i32 17)" [src/tdt.c:126]
+ST_10 : Operation 182 [1/1] (0.00ns)   --->   "%tmp_57_cast = zext i26 %min2_3_cast to i27" [src/tdt.c:128]
+ST_10 : Operation 183 [1/1] (1.28ns)   --->   "%tmp_38 = icmp sgt i27 %tmp_57_cast, %tmp_19_cast" [src/tdt.c:128]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 184 [1/1] (0.00ns) (grouped into LUT with out node rt_1)   --->   "%rt_2 = trunc i18 %min2_3 to i12" [src/tdt.c:131]
+ST_10 : Operation 185 [1/1] (0.00ns) (grouped into LUT with out node rt_1)   --->   "%sel_tmp5 = xor i1 %tmp_61, true" [src/tdt.c:126]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 186 [1/1] (0.00ns) (grouped into LUT with out node rt_1)   --->   "%sel_tmp6 = and i1 %tmp_38, %sel_tmp5" [src/tdt.c:128]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 187 [1/1] (0.00ns) (grouped into LUT with out node rt_1)   --->   "%rt_3 = select i1 %sel_tmp6, i12 %rt, i12 %rt_2" [src/tdt.c:128]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 188 [1/1] (0.62ns) (out node of the LUT)   --->   "%rt_1 = select i1 %tmp_61, i12 0, i12 %rt_3" [src/tdt.c:126]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 189 [1/1] (1.28ns)   --->   "%tmp_98_i1 = icmp sgt i18 %max1_2, %max2_1" [src/aux.c:25->src/tdt.c:135]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 190 [1/1] (0.56ns)   --->   "%max1_3 = select i1 %tmp_98_i1, i18 %max1_2, i18 %max2_1" [src/aux.c:25->src/tdt.c:135]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 191 [1/1] (1.28ns)   --->   "%tmp_39 = icmp sgt i18 %max1_3, %tmp_19_cast2" [src/tdt.c:135]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 192 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%tmp_64 = call i1 @_ssdm_op_BitSelect.i1.i18.i32(i18 %max1_3, i32 17)" [src/tdt.c:137]
+ST_10 : Operation 193 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%rb_2 = trunc i18 %max1_3 to i12" [src/tdt.c:140]
+ST_10 : Operation 194 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%p_rb_2 = select i1 %tmp_64, i12 0, i12 %rb_2" [src/tdt.c:137]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 195 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%rb_1 = select i1 %tmp_39, i12 %rt, i12 %p_rb_2" [src/tdt.c:135]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_10 : Operation 196 [1/1] (0.00ns)   --->   "%tmp_66_cast1 = sext i12 %rt_1 to i25" [src/tdt.c:144]
+ST_10 : Operation 197 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%tmp_66_cast = sext i12 %rt_1 to i13" [src/tdt.c:144]
+ST_10 : Operation 198 [1/1] (0.00ns) (grouped into LUT with out node tmp_40)   --->   "%tmp_68_cast = sext i12 %rb_1 to i13" [src/tdt.c:144]
+ST_10 : Operation 199 [1/1] (1.35ns) (out node of the LUT)   --->   "%tmp_40 = sub i13 %tmp_66_cast, %tmp_68_cast" [src/tdt.c:144]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 200 [1/1] (0.00ns) (grouped into LUT with out node tmp_43)   --->   "%tmp_70_cast = sext i12 %cl_1 to i13" [src/tdt.c:145]
+ST_10 : Operation 201 [1/1] (0.00ns) (grouped into LUT with out node tmp_43)   --->   "%tmp_71_cast = sext i12 %cr_1 to i13" [src/tdt.c:145]
+ST_10 : Operation 202 [1/1] (1.35ns) (out node of the LUT)   --->   "%tmp_43 = sub i13 %tmp_70_cast, %tmp_71_cast" [src/tdt.c:145]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 203 [1/1] (0.00ns)   --->   "%tmp_46 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %w_div_read, i3 0)" [src/tdt.c:209]
+ST_10 : Operation 204 [1/1] (0.00ns)   --->   "%tmp_78_cast1 = sext i11 %tmp_46 to i14" [src/tdt.c:209]
+ST_10 : Operation 205 [1/1] (0.00ns)   --->   "%tmp_78_cast = sext i11 %tmp_46 to i12" [src/tdt.c:209]
+ST_10 : Operation 206 [1/1] (1.35ns)   --->   "%tmp_47 = add i14 %tmp_78_cast1, %tmp_16_cast2" [src/tdt.c:209]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 207 [1/1] (0.00ns)   --->   "%tmp_79_cast = sext i14 %tmp_47 to i18" [src/tdt.c:209]
+ST_10 : Operation 208 [1/1] (1.28ns)   --->   "%tmp_48 = icmp slt i18 %min2_1, %tmp_79_cast" [src/tdt.c:209]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 209 [1/1] (1.35ns)   --->   "%tmp_49 = sub i12 0, %tmp_78_cast" [src/tdt.c:209]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 210 [1/1] (0.00ns)   --->   "%tmp_81_cast = sext i12 %tmp_49 to i18" [src/tdt.c:209]
+ST_10 : Operation 211 [1/1] (1.28ns)   --->   "%tmp_50 = icmp sgt i18 %max1_1, %tmp_81_cast" [src/tdt.c:209]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 212 [1/1] (0.00ns)   --->   "%tmp_51 = call i11 @_ssdm_op_BitConcatenate.i11.i8.i3(i8 %h_div_read, i3 0)" [src/tdt.c:209]
+ST_10 : Operation 213 [1/1] (0.00ns)   --->   "%tmp_88_cast1 = sext i11 %tmp_51 to i14" [src/tdt.c:209]
+ST_10 : Operation 214 [1/1] (0.00ns)   --->   "%tmp_88_cast = sext i11 %tmp_51 to i12" [src/tdt.c:209]
+ST_10 : Operation 215 [1/1] (1.35ns)   --->   "%tmp_52 = sub i12 0, %tmp_88_cast" [src/tdt.c:209]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 216 [1/1] (0.00ns)   --->   "%tmp_89_cast = sext i12 %tmp_52 to i18" [src/tdt.c:209]
+ST_10 : Operation 217 [1/1] (1.28ns)   --->   "%tmp_53 = icmp sgt i18 %max1_3, %tmp_89_cast" [src/tdt.c:209]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 218 [1/1] (1.35ns)   --->   "%tmp_54 = add i14 %tmp_88_cast1, %tmp_19_cast1" [src/tdt.c:209]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 219 [1/1] (0.00ns)   --->   "%tmp_93_cast = sext i14 %tmp_54 to i18" [src/tdt.c:209]
+ST_10 : Operation 220 [1/1] (1.28ns)   --->   "%tmp_55 = icmp slt i18 %min2_3, %tmp_93_cast" [src/tdt.c:209]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 221 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7)   --->   "%tmp3 = and i1 %tmp_48, %tmp_50" [src/tdt.c:209]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 222 [1/1] (0.00ns) (grouped into LUT with out node sel_tmp7)   --->   "%tmp4 = and i1 %tmp_53, %tmp_55" [src/tdt.c:209]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 223 [1/1] (0.47ns) (out node of the LUT)   --->   "%sel_tmp7 = and i1 %tmp4, %tmp3" [src/tdt.c:209]   --->   Core 27 'LogicGate' <Latency = 0> <II = 1> <Delay = 0.47> <FuncUnit> <Opcode : 'and' 'or' 'xor'> <InPorts = 2> <OutPorts = 1>
+ST_10 : Operation 224 [3/3] (1.02ns)   --->   "%tmp_56 = mul i25 %tmp_16_cast1, %tmp_66_cast1" [src/tdt.c:216]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 2.77> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 11> : 1.02ns
+ST_11 : Operation 225 [2/3] (1.02ns)   --->   "%tmp_56 = mul i25 %tmp_16_cast1, %tmp_66_cast1" [src/tdt.c:216]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 2.77> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+
+ <State 12> : 3.97ns
+ST_12 : Operation 226 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %w_div) nounwind, !map !23"
+ST_12 : Operation 227 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %h_div) nounwind, !map !29"
+ST_12 : Operation 228 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13 %d_w) nounwind, !map !33"
+ST_12 : Operation 229 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13 %d_h) nounwind, !map !37"
+ST_12 : Operation 230 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13 %s_w) nounwind, !map !41"
+ST_12 : Operation 231 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13 %s_h) nounwind, !map !45"
+ST_12 : Operation 232 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i27 %M0) nounwind, !map !49"
+ST_12 : Operation 233 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i27 %M1) nounwind, !map !53"
+ST_12 : Operation 234 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i27 %M2) nounwind, !map !57"
+ST_12 : Operation 235 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i27 %M3) nounwind, !map !61"
+ST_12 : Operation 236 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i27 %M4) nounwind, !map !65"
+ST_12 : Operation 237 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i27 %M5) nounwind, !map !69"
+ST_12 : Operation 238 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %c) nounwind, !map !73"
+ST_12 : Operation 239 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i8 %r) nounwind, !map !77"
+ST_12 : Operation 240 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i15* %hs_p) nounwind, !map !81"
+ST_12 : Operation 241 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i15* %hs) nounwind, !map !87"
+ST_12 : Operation 242 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i15* %ws) nounwind, !map !91"
+ST_12 : Operation 243 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i1* %tile_valid) nounwind, !map !95"
+ST_12 : Operation 244 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i12* %left_col) nounwind, !map !99"
+ST_12 : Operation 245 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i12* %top_row) nounwind, !map !103"
+ST_12 : Operation 246 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i32* %baddr) nounwind, !map !107"
+ST_12 : Operation 247 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13* %cd0) nounwind, !map !111"
+ST_12 : Operation 248 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13* %cd1) nounwind, !map !115"
+ST_12 : Operation 249 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13* %cd2) nounwind, !map !119"
+ST_12 : Operation 250 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i13* %cd3) nounwind, !map !123"
+ST_12 : Operation 251 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecBitsMap(i2* %mod_db) nounwind, !map !127"
+ST_12 : Operation 252 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecTopModule([4 x i8]* @tdt_str) nounwind"
+ST_12 : Operation 253 [1/1] (0.00ns)   --->   "call void (...)* @_ssdm_op_SpecPipeline(i32 -1, i32 1, i32 1, i32 0, [1 x i8]* @p_str) nounwind" [src/tdt.c:64]
+ST_12 : Operation 254 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i13P(i13* %cd0, i13 %cd00) nounwind" [src/tdt.c:83]
+ST_12 : Operation 255 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i13P(i13* %cd1, i13 %cd11) nounwind" [src/tdt.c:83]
+ST_12 : Operation 256 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i13P(i13* %cd2, i13 %cd00) nounwind" [src/tdt.c:83]
+ST_12 : Operation 257 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i13P(i13* %cd3, i13 %cd11) nounwind" [src/tdt.c:83]
+ST_12 : Operation 258 [1/1] (1.15ns)   --->   "%abscond = icmp sgt i13 %tmp_40, 0" [src/tdt.c:144]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 259 [1/1] (1.35ns)   --->   "%tmp_41 = sub i13 0, %tmp_40" [src/tdt.c:144]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 260 [1/1] (0.50ns)   --->   "%s_tile_h = select i1 %abscond, i13 %tmp_40, i13 %tmp_41" [src/tdt.c:144]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 261 [1/1] (0.00ns)   --->   "%s_tile_h_cast1 = sext i13 %s_tile_h to i15" [src/tdt.c:144]
+ST_12 : Operation 262 [1/1] (0.00ns)   --->   "%tmp_66 = trunc i13 %s_tile_h to i12" [src/tdt.c:144]
+ST_12 : Operation 263 [1/1] (0.00ns)   --->   "%tmp_70_cast1 = sext i12 %cl_1 to i25" [src/tdt.c:145]
+ST_12 : Operation 264 [1/1] (1.15ns)   --->   "%abscond1 = icmp sgt i13 %tmp_43, 0" [src/tdt.c:145]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 265 [1/1] (1.35ns)   --->   "%tmp_44 = sub i13 0, %tmp_43" [src/tdt.c:145]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 266 [1/1] (0.50ns)   --->   "%s_tile_w_r2_9 = select i1 %abscond1, i13 %tmp_43, i13 %tmp_44" [src/tdt.c:145]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 267 [1/1] (0.00ns)   --->   "%s_tile_w_r2_5_cast = sext i13 %s_tile_w_r2_9 to i14" [src/tdt.c:145]
+ST_12 : Operation 268 [1/1] (1.15ns)   --->   "%tmp_45 = icmp slt i13 %s_tile_h, 1" [src/tdt.c:169]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 269 [1/1] (0.62ns)   --->   "%s_tile_h_1 = select i1 %tmp_45, i12 1, i12 %tmp_66" [src/tdt.c:169]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 270 [1/1] (0.00ns)   --->   "%s_tile_h_1_cast = zext i12 %s_tile_h_1 to i15" [src/tdt.c:169]
+ST_12 : Operation 271 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i15P(i15* %hs, i15 %s_tile_h_1_cast) nounwind" [src/tdt.c:170]
+ST_12 : Operation 272 [1/1] (0.00ns)   --->   "%m = trunc i13 %s_tile_w_r2_9 to i2" [src/aux.c:30->src/tdt.c:177]
+ST_12 : Operation 273 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i2P(i2* %mod_db, i2 %m) nounwind" [src/tdt.c:178]
+ST_12 : Operation 274 [1/1] (1.35ns)   --->   "%s_tile_w_r2 = add i14 2, %s_tile_w_r2_5_cast" [src/tdt.c:182]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 275 [1/1] (1.35ns)   --->   "%s_tile_w_r2_1 = add i14 5, %s_tile_w_r2_5_cast" [src/tdt.c:185]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 276 [1/1] (1.35ns)   --->   "%s_tile_w_r2_2 = add i14 4, %s_tile_w_r2_5_cast" [src/tdt.c:188]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 277 [1/1] (1.35ns)   --->   "%s_tile_w_r2_3 = add i14 3, %s_tile_w_r2_5_cast" [src/tdt.c:191]   --->   Core 14 'AddSub' <Latency = 0> <II = 1> <Delay = 1.35> <FuncUnit> <Opcode : 'add' 'sub'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 278 [1/1] (0.50ns)   --->   "%sel_tmp2 = icmp eq i2 %m, -1" [src/aux.c:30->src/tdt.c:177]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 279 [1/1] (0.00ns) (grouped into LUT with out node s_tile_w_r2_6)   --->   "%s_tile_w_r2_5 = select i1 %sel_tmp2, i14 %s_tile_w_r2_3, i14 %s_tile_w_r2_5_cast" [src/aux.c:30->src/tdt.c:177]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 280 [1/1] (0.50ns)   --->   "%sel_tmp4 = icmp eq i2 %m, -2" [src/aux.c:30->src/tdt.c:177]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 281 [1/1] (0.38ns) (out node of the LUT)   --->   "%s_tile_w_r2_6 = select i1 %sel_tmp4, i14 %s_tile_w_r2_2, i14 %s_tile_w_r2_5" [src/aux.c:30->src/tdt.c:177]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 282 [1/1] (0.50ns)   --->   "%sel_tmp8 = icmp eq i2 %m, 1" [src/aux.c:30->src/tdt.c:177]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 283 [1/1] (0.00ns) (grouped into LUT with out node s_tile_w_r2_8)   --->   "%s_tile_w_r2_7 = select i1 %sel_tmp8, i14 %s_tile_w_r2_1, i14 %s_tile_w_r2_6" [src/aux.c:30->src/tdt.c:177]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 284 [1/1] (0.50ns)   --->   "%sel_tmp3 = icmp eq i2 %m, 0" [src/aux.c:30->src/tdt.c:177]   --->   Core 25 'Cmp' <Latency = 0> <II = 1> <Delay = 1.28> <FuncUnit> <Opcode : 'icmp'> <InPorts = 2> <OutPorts = 1>
+ST_12 : Operation 285 [1/1] (0.38ns) (out node of the LUT)   --->   "%s_tile_w_r2_8 = select i1 %sel_tmp3, i14 %s_tile_w_r2, i14 %s_tile_w_r2_7" [src/aux.c:30->src/tdt.c:177]   --->   Core 26 'Sel' <Latency = 0> <II = 1> <Delay = 0.38> <FuncUnit> <Opcode : 'select'> <InPorts = 3> <OutPorts = 1>
+ST_12 : Operation 286 [1/1] (0.00ns)   --->   "%s_tile_w_r1_cast = sext i14 %s_tile_w_r2_8 to i15" [src/aux.c:30->src/tdt.c:177]
+ST_12 : Operation 287 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i15P(i15* %ws, i15 %s_tile_w_r1_cast) nounwind" [src/tdt.c:206]
+ST_12 : Operation 288 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i15P(i15* %hs_p, i15 %s_tile_h_cast1) nounwind" [src/tdt.c:207]
+ST_12 : Operation 289 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i1P(i1* %tile_valid, i1 %sel_tmp7) nounwind" [src/tdt.c:210]
+ST_12 : Operation 290 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i12P(i12* %left_col, i12 %cl_1) nounwind" [src/tdt.c:214]
+ST_12 : Operation 291 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i12P(i12* %top_row, i12 %rt_1) nounwind" [src/tdt.c:215]
+ST_12 : Operation 292 [1/3] (0.00ns)   --->   "%tmp_56 = mul i25 %tmp_16_cast1, %tmp_66_cast1" [src/tdt.c:216]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 2.77> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_12 : Operation 293 [1/1] (2.70ns)   --->   "%tmp_57 = add i25 %tmp_56, %tmp_70_cast1" [src/tdt.c:216]   --->   Core 61 'DSP48' <Latency = 2> <II = 1> <Delay = 2.77> <IPBlock> <Opcode : 'mul' 'add' 'sub' 'select'> <InPorts = 0> <OutPorts = 1> <Sync> <CReg>
+ST_12 : Operation 294 [1/1] (0.00ns)   --->   "%tmp_96_cast = sext i25 %tmp_57 to i32" [src/tdt.c:216]
+ST_12 : Operation 295 [1/1] (0.00ns)   --->   "call void @_ssdm_op_Write.ap_auto.i32P(i32* %baddr, i32 %tmp_96_cast) nounwind" [src/tdt.c:216]
+ST_12 : Operation 296 [1/1] (0.00ns)   --->   "ret void" [src/tdt.c:218]
+
+
+============================================================
++ Verbose Summary: Timing violations
+============================================================
+Target clock period: 4.5ns, clock uncertainty: 0ns.
+
+ <State 1>: 2.7ns
+The critical path consists of the following:
+	wire read on port 'r' [54]  (0 ns)
+	'mul' operation ('rd00', src/tdt.c:78) [79]  (2.7 ns)
+
+ <State 2>: 4.06ns
+The critical path consists of the following:
+	'add' operation ('tmp1', src/tdt.c:77) [73]  (1.36 ns)
+	'add' operation ('cd11', src/tdt.c:77) [75]  (1.35 ns)
+	'sub' operation ('tmp_26_1', src/tdt.c:90) [126]  (1.35 ns)
+
+ <State 3>: 4.15ns
+The critical path consists of the following:
+	'mul' operation ('tmp_29_1', src/tdt.c:94) [128]  (4.15 ns)
+
+ <State 4>: 4.15ns
+The critical path consists of the following:
+	'mul' operation ('tmp_18', src/tdt.c:94) [111]  (4.15 ns)
+
+ <State 5>: 4.15ns
+The critical path consists of the following:
+	'mul' operation ('tmp_18', src/tdt.c:94) [111]  (4.15 ns)
+
+ <State 6>: 4.15ns
+The critical path consists of the following:
+	'mul' operation ('tmp_18', src/tdt.c:94) [111]  (4.15 ns)
+
+ <State 7>: 4.15ns
+The critical path consists of the following:
+	'mul' operation ('tmp_18', src/tdt.c:94) [111]  (4.15 ns)
+
+ <State 8>: 4.38ns
+The critical path consists of the following:
+	'add' operation ('tmp_21', src/tdt.c:94) [114]  (1.51 ns)
+	'add' operation ('tmp_22', src/tdt.c:94) [115]  (1.51 ns)
+	'add' operation ('cs[0]', src/tdt.c:101) [124]  (1.36 ns)
+
+ <State 9>: 3.13ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_i', src/aux.c:15->src/tdt.c:110) [160]  (1.28 ns)
+	'select' operation ('in[1]', src/aux.c:15->src/tdt.c:110) [161]  (0.563 ns)
+	'icmp' operation ('tmp_97_i', src/aux.c:17->src/tdt.c:110) [164]  (1.28 ns)
+
+ <State 10>: 4.48ns
+The critical path consists of the following:
+	'icmp' operation ('tmp_98_i', src/aux.c:25->src/tdt.c:118) [178]  (1.28 ns)
+	'select' operation ('max1', src/aux.c:25->src/tdt.c:118) [179]  (0.563 ns)
+	'icmp' operation ('tmp_37', src/tdt.c:118) [180]  (1.28 ns)
+	'select' operation ('cr_1', src/tdt.c:118) [184]  (0 ns)
+	'sub' operation ('tmp_43', src/tdt.c:145) [222]  (1.35 ns)
+
+ <State 11>: 1.02ns
+The critical path consists of the following:
+	'mul' operation ('tmp_56', src/tdt.c:216) [272]  (1.02 ns)
+
+ <State 12>: 3.97ns
+The critical path consists of the following:
+	'sub' operation ('tmp_44', src/tdt.c:145) [224]  (1.35 ns)
+	'select' operation ('s_tile_w_r2', src/tdt.c:145) [225]  (0.504 ns)
+	'add' operation ('s_tile_w_r2', src/tdt.c:188) [235]  (1.35 ns)
+	'select' operation ('s_tile_w_r2', src/aux.c:30->src/tdt.c:177) [240]  (0.383 ns)
+	'select' operation ('s_tile_w_r2', src/aux.c:30->src/tdt.c:177) [242]  (0 ns)
+	'select' operation ('s_tile_w_r2', src/aux.c:30->src/tdt.c:177) [244]  (0.383 ns)
+
+
+============================================================
++ Verbose Summary: Binding
+============================================================
+N/A
+* FSMD analyzer results:
+  - Output states:
+ - Input state : 
+  - Chain level:
+	State 1
+	State 2
+	State 3
+	State 4
+	State 5
+	State 6
+	State 7
+	State 8
+	State 9
+	State 10
+	State 11
+	State 12
+
+
+============================================================
++ Verbose Summary: Datapath Resource usage 
+============================================================
+N/A

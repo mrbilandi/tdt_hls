@@ -1,0 +1,2 @@
+lappend pragmaStatus0 {pragma "PIPELINE" source "/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/tdt.c" location "tdt" found 1 funcFound 1 applied 1 ambiguous 0 reason "null"}
+lappend pragmaStatus0 {pragma "PIPELINE" source "/home/mrostami/SamimProject/DVE0528/Rotation/AffineTransformation/HLS/tdt_hls/src/aux.c" location "tdt" found 0 funcFound 0 applied 0 ambiguous 0 reason "Directive 'PIPELINE' cannot be applied: Function 'tdt' does not exist in any synthesis source file."}
